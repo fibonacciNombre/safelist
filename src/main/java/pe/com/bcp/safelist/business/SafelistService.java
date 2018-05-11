@@ -1,12 +1,14 @@
-package pe.com.bcp.safelist.dao;
+package pe.com.bcp.safelist.business;
 
 import io.reactivex.Flowable;
 import org.springframework.data.cassandra.repository.Query;
 import org.springframework.data.repository.reactive.RxJava2CrudRepository;
 import pe.com.bcp.safelist.entity.Archive;
 
-public interface SafelistRespository extends RxJava2CrudRepository<Archive, String> {
+public interface SafelistService  {
 
-	@Query("Select * from archive where type=?0")
+
 	Flowable<Archive> findByType(String type);
+
+	public Flowable<Archive> findAll();
 }
