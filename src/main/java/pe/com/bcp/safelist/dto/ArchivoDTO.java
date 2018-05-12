@@ -1,7 +1,12 @@
 package pe.com.bcp.safelist.dto;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.UUID;
 
+@Getter
+@Setter
 public class ArchivoDTO {
 	
 	private UUID id;
@@ -10,31 +15,5 @@ public class ArchivoDTO {
 
 	private String type;
 
-	public ArchivoDTO() {
-	}
-
-	public UUID getId() {
-		return id;
-	}
-
-	public void setId(UUID id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getType() {
-		return type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-	}
 
 }

@@ -15,8 +15,11 @@ public class SafelistServiceImpl implements SafelistService {
     SafelistRespository safelistRespository;
 
     public Flowable<Archive> findByType(String type){
+       return Flowable.merge(safelistRespository.findByType(type),
+                safelistRespository.findAll())
+                ;
+       // return safelistRespository.findByType(type);
 
-        return safelistRespository.findByType(type);
     }
 
     public Flowable<Archive> findAll(){
